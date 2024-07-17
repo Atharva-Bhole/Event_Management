@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="../static/css/adminloginreg.css">
+</head>
+<body>
+  
+  <header>
+    <h2 class="logo">Admin Login</h2>
+    <nav class="navigation">
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/adminreg">Register as Admin</a>
+    </nav>
+  </header>
+      <div class="wrapper">
+        <div class="form-box login">
+            <h2>Admin Login</h2>
+            <form action="/adminlogin" method="post">
+              {{ form.hidden_tag() }}
+                <div class="input-box">
+                  <span class="icon"><ion-icon name="mail"></ion-icon></span>
+<!--                   
+                    <input type="email" name="email" hidden>
+                     -->
+                    {{form.email(class="form-control", id="email")}}
+              <label>E-mail</label>  
+                  
+                </div>
+                <div class="input-box">
+                  <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                  <!-- <input type="password" name="password" hidden> -->
+                  {{form.password(class="form-control", id="password")}}
+                  <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                  <label><input type="checkbox">Remember me</label>
+                </div>
+                <div class="sub">
+                  {{form.submit(class="btn btn-primary")}}
+                </div>
+                <div class="login-register">
+                  <p>Don't have an account? <a href="/adminreg">Register</a></p>
+                </div>
+            </form>
+        </div>
+      </div>
+</body>
+</html>

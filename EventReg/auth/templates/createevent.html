@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Event</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="../static/css/adminlog.css">
+</head>
+<body>
+  
+  <header>
+    <h2 class="logo">Event Manager</h2>
+    <nav class="navigation">
+      <a href="/home">Home</a>
+      <a href="/about">About</a>
+      <a href="/admin">Admin Page</a>
+    </nav>
+  </header>
+      <div class="wrapper">
+        <div class="form-box login">
+            <h2>Add Event</h2>
+            <form action="/createform" method="post" enctype="multipart/form-data">
+              {{ form.hidden_tag() }}
+              <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+<!--                   
+                  <input type="email" name="email" hidden>
+                   -->
+                  {{form.eventname(class="form-control", id="eventname")}}
+            <label>Enter Event Name:</label>  
+                
+              </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="image"></ion-icon></span>
+  <!--                   
+                      <input type="email" name="email" hidden>
+                       -->
+                       <input type="file" name="img" required>
+                <label>Event Banner</label>  
+                    
+                  </div>
+                <div class="remember-forgot">
+                  <label><input type="checkbox"></label>
+                  <a href="/forgot-password">Forgot Password?</a>
+                </div>
+                <div class="sub">
+                  {{form.submit(class="btn btn-primary")}}
+                </div>
+                <div class="login-register">
+                  <p>Already have an account? <a href="/Login">Login</a></p>
+                </div>
+            </form>
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>       
+    <link rel="stylesheet" href="../static/css/adminlog.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body
+        {
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <input type="checkbox" name="" id="check" style="display: none;visibility: hidden;">
+        <header>
+            <h2><a href="/events" class="logo">Admin Page Login</a></h2>
+            <div class="navigation">
+                <a href="/home">Home</a>
+                <a href="/about">About</a>
+                <a href="/signup">Sign Up</a>
+            </div>
+            <label for="check">
+                <i class="fas fa-bars menu-btn"></i>
+                <i class="fas fa-times close-btn"></i>
+
+            </label>
+        </header>
+        
+    </nav>
+    </div>
+    <div class="log">
+        <div class="head">
+            LOGIN
+        </div>
+        <form action="/adminlogin" method="post">
+            {{ form.email(class="form-control", id="email") }}
+            {% if form.email.errors %}
+          <ul>
+            {% for errors in form.email.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+            {% endif %}
+            <input type="password" name="password" id="password" placeholder="password">
+            {{ form.submit(class="btn btn-dark mt-4") }}
+        </form>
+    </div>
+</body>
+</html>
